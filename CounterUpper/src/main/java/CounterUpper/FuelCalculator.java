@@ -12,4 +12,10 @@ public class FuelCalculator {
     public int subtractMass(int mass) {
         return mass-2;
     }
+
+    public int calculateFuel(int mass) {
+        int fuelNeeded = divideMass(mass);
+        fuelNeeded = subtractMass(fuelNeeded);
+        return fuelNeeded;
+    }
 }
