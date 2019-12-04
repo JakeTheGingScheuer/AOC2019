@@ -8,4 +8,8 @@ public class FuelCalculator {
     public int divideMass(int mass) {
         return mass/3;
     }
+
+    public int subtractMass(int mass) {
+        return mass-2;
+    }
 }

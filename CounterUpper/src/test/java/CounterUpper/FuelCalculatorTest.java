@@ -1,15 +1,15 @@
 package CounterUpper;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class FuelCalculatorTest {
 
-    FuelCalculator testCalc;
+    FuelCalculator testCalc = new FuelCalculator();
 
     @Test
     public void fuelCalculatorShouldDivideMassBy3() {
 
-        testCalc = new FuelCalculator();
         int fakeMass = 12;
         int actual = testCalc.divideMass(fakeMass);
         int expected = 4;
@@ -20,10 +20,18 @@ public class FuelCalculatorTest {
     @Test
     public void fuelCalculatorShouldRoundDownWhenDividingMass() {
 
-        testCalc = new FuelCalculator();
         int fakeMass = 14;
         int actual = testCalc.divideMass(fakeMass);
         int expected = 4;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void fuelCalculatorShouldSubtract2() {
+        int fakeMass = 5;
+        int actual = testCalc.subtractMass(fakeMass);
+        int expected = 3;
 
         assertEquals(expected, actual);
     }
