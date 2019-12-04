@@ -5,11 +5,11 @@ package CounterUpper;
 
 public class FuelCalculator {
 
-    public int divideMass(int mass) {
+    private int divideMass(int mass) {
         return mass/3;
     }
 
-    public int subtractMass(int mass) {
+    private int subtractMass(int mass) {
         return mass-2;
     }
 
@@ -17,5 +17,13 @@ public class FuelCalculator {
         int fuelNeeded = divideMass(mass);
         fuelNeeded = subtractMass(fuelNeeded);
         return fuelNeeded;
+    }
+
+    public int calculateAll(int[] masses) {
+        int totalFuelNeeded = 0;
+        for (int mass : masses) {
+            totalFuelNeeded += calculateFuel(mass);
+        }
+        return totalFuelNeeded;
     }
 }
